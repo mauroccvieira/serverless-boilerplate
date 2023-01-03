@@ -6,13 +6,17 @@
   "scripts": {
     "sls": "serverless",
     "build": "pnpm sls package --aws-profile breakingmaurin",
-    "deploy:dev": "pnpm sls deploy --aws-profile breakingmaurin --stage dev"
+    "deploy:dev": "pnpm sls deploy --aws-profile breakingmaurin --stage dev",
+    "prepare": "husky install"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
     "@serverless/typescript": "^3.25.0",
     "@types/aws-lambda": "^8.10.101",
     "@types/node": "^18.11.18",
     "esbuild": "^0.16.13",
+    "husky": "^8.0.3",
     "semantic-release": "^19.0.5",
     "serverless": "^3.26.0",
     "serverless-esbuild": "^1.35.3",
