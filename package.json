@@ -6,6 +6,8 @@
   "scripts": {
     "sls": "serverless",
     "build": "pnpm sls package --aws-profile breakingmaurin",
+    "type-check": "echo \"Type-Check not implemented yet\"",
+    "test-unity": "echo \"Test-Unity not implemented yet\"",
     "deploy:dev": "pnpm sls deploy --aws-profile breakingmaurin --stage dev",
     "prepare": "husky install"
   },
