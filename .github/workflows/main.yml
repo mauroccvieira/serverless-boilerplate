@@ -1,3 +1,4 @@
+# Runs tests and deploys to dev stage
 on:
   push:
     branches:
@@ -33,20 +34,21 @@ jobs:
         run: pnpm test-unity
 
       - name: Create Artifact
-        run: pnpm sls package --package dist
+        run: pnpm sls package --package pack
         env:
           SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
+
       - name: Zip artifact
-        run: zip -r dist.zip dist
+        run: zip -r pack.zip pack
         
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: serverless-artifact
-          path: dist.zip
+          path: pack.zip
   
   deploy-development:
-    name: deploy
+    name: Deploy dev
     needs: build
     runs-on: ubuntu-latest
     environment: dev
@@ -54,27 +56,29 @@ jobs:
       matrix:
         node-version: [18.x]
     steps:
-      - uses: actions/checkout@v3
+      # - uses: actions/checkout@v3
 
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 7.21.0
+      # - uses: pnpm/action-setup@v2
+      #   with:
+      #     version: 7.21.0
 
-      - name: Setup Node and Cache
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: pnpm
+      # - name: Setup Node and Cache
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: ${{ matrix.node-version }}
+      #     cache: pnpm
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+      # - name: Install dependencies
+      #   run: pnpm install --frozen-lockfile
+
+      - uses: actions/download-artifact@v3
 
       - name: serverless deploy
         uses: serverless/github-action@v3.1
         env:
           SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
         with:
-          args: deploy --stage dev
+          args: deploy --stage dev --package dist.zip
 
   # create-release:
   #   name: Create Release
