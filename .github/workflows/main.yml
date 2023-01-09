@@ -71,12 +71,12 @@ jobs:
       # - name: Install dependencies
       #   run: pnpm install --frozen-lockfile
 
+      - name: Output results
+        run: "cd ./serverless-artifact && ls -la"
+
       - uses: actions/download-artifact@v3
       - name: Zip artifact
         run: unzip pack.zip
-
-      - name: Output results
-        run: "ls -la"
 
       - name: serverless deploy
         uses: serverless/github-action@v3.1
