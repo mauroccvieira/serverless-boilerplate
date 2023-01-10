@@ -72,7 +72,11 @@ jobs:
       #   run: pnpm install --frozen-lockfile
 
       - name: Output results
-        run: "cd ./serverless-artifact && ls -la"
+        run: "ls -la"
+        
+      - name: Output results
+        run: "ls -la"
+        working-directory: serverless-artifac
 
       - uses: actions/download-artifact@v3
       - name: Zip artifact
