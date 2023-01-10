@@ -40,13 +40,13 @@ jobs:
 
       - name: Zip artifact
         run: zip -r pack.zip pack
-        
+
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: serverless-artifact
           path: pack.zip
-  
+
   deploy-development:
     name: Deploy dev
     needs: build
@@ -75,13 +75,13 @@ jobs:
 
       - name: Output results
         run: "ls -la"
-        
+
       - name: Output results
         run: "cd serverless-artifact && ls -la"
 
-
       - name: Zip artifact
         run: unzip pack.zip
+        working-directory: serverless-artifact
 
       - name: serverless deploy
         uses: serverless/github-action@v3.1
@@ -104,7 +104,7 @@ jobs:
   #       id: create-release-tag
   #       # left pads the run number with zeros to a length of 4; better alphabetical order
   #       run: echo "tag_name=r-$(printf %04d $GITHUB_RUN_NUMBER)" >> $GITHUB_OUTPUT
-      
+
   #     - name: Create Draft Release
   #       uses: softprops/action-gh-release@v1
   #       with:
