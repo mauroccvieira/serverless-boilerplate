@@ -71,6 +71,8 @@ jobs:
       # - name: Install dependencies
       #   run: pnpm install --frozen-lockfile
 
+      - uses: actions/download-artifact@v3
+
       - name: Output results
         run: "ls -la"
         
@@ -78,7 +80,7 @@ jobs:
         run: "ls -la"
         working-directory: serverless-artifac
 
-      - uses: actions/download-artifact@v3
+
       - name: Zip artifact
         run: unzip pack.zip
 
