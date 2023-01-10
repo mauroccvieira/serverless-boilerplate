@@ -77,7 +77,7 @@ jobs:
         run: "ls -la"
         
       - name: Output results
-        run: "cd serverless-artifac && ls -la"
+        run: "cd serverless-artifact && ls -la"
 
 
       - name: Zip artifact
