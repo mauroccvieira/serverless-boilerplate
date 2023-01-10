@@ -78,7 +78,7 @@ jobs:
         working-directory: serverless-artifact
       
       - name: Output results
-        run: "pnpm deploy --stage dev --pack pack"
+        run: "pnpm sls deploy --stage dev --pack pack"
 
 
   # create-release:
