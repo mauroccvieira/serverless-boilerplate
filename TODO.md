@@ -4,11 +4,13 @@
 [x] Add Husky
 [x] Configure conventional-commits hook with husky
 [ ] Configure Trunk-based development (TBD)
-[ ] Github CI
+[ ] PR test and validation Workflow
+[x] Eslint
+[x] Github CI
 [ ] Add and configure package semantic-release
 [ ] Add Middy
 [ ] Event Bridge
-[ ] Unity testing
+[x] Unity testing
 [ ] Integration testing
 [ ] E2E testing
 
