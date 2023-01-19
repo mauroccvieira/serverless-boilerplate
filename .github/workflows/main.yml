@@ -75,9 +75,6 @@ jobs:
         run: unzip pack.zip -d ..
         working-directory: serverless-artifact
 
-      # - name: Output results
-      #   run: "pnpm sls deploy --stage dev --package pack"
-
       - name: serverless deploy
         uses: serverless/github-action@v3.1
         env:
@@ -85,3 +82,8 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         with:
           args: deploy --stage dev --package pack
+
+      - uses: google-github-actions/release-please-action@v3
+        with:
+          release-type: node
+          package-name: release-please-action
