@@ -1,12 +1,18 @@
 # TODO
 ## Tech Stuff
+
+[x] Add Husky
+[x] Configure conventional-commits hook with husky
+[ ] Configure Trunk-based development (TBD)
+[ ] Github CI
 [ ] Add and configure package semantic-release
-
-[ ] Add Husky
-
-[ ] Configure conventional-commits hook with husky
-
 [ ] Add Middy
+[ ] Event Bridge
+[ ] Unity testing
+[ ] Integration testing
+[ ] E2E testing
+
+
 
 ## Features
 [ ] Create Account
@@ -20,11 +26,3 @@
 [ ] Transfer money to another account
 
 [ ] Get Statement
-
-
-# Reminders
-[ ] Event Bridge
-
-[ ] Integration Testing
-
-[ ] Github CI
