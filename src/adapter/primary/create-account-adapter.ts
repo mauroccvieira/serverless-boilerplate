@@ -9,19 +9,3 @@ export const handler = async ({
     body: JSON.stringify("Not implemented yet. But it will"),
   };
 };
-
-class Card {
-  constructor() {}
-
-  getSomething(it: number) {
-    if (it === 2) {
-      return true;
-    }
-    else if (it === 1 ) {
-      return "bool"
-    }
-    else {
-      return false
-    }
-  }
-}
