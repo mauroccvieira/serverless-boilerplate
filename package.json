@@ -9,6 +9,7 @@
     "type-check": "echo \"Type-Check not implemented yet\"",
     "test-unity": "echo \"Test-Unity not implemented yet\"",
     "deploy:dev": "pnpm sls deploy --aws-profile breakingmaurin --stage dev",
+    "lint": "eslint ./src --fix",
     "prepare": "husky install"
   },
   "devDependencies": {
@@ -17,8 +18,13 @@
     "@serverless/typescript": "^3.25.0",
     "@types/aws-lambda": "^8.10.101",
     "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.48.2",
+    "@typescript-eslint/parser": "^5.48.2",
     "esbuild": "^0.16.13",
+    "eslint": "^8.32.0",
+    "eslint-plugin-sonarjs": "^0.18.0",
     "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
     "semantic-release": "^19.0.5",
     "serverless": "^3.26.0",
     "serverless-esbuild": "^1.35.3",
