@@ -1,0 +1,9 @@
+{
+  "*.ts": [
+    "pnpm lint",
+    "pnpm lint:tests",
+    "pnpm format",
+    "pnpm format:tests",
+    "pnpm test:unity"
+  ]
+}
