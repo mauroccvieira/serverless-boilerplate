@@ -14,10 +14,6 @@ jobs:
       - name: Checkout files
         uses: actions/checkout@v3
 
-      - uses: yarn/action-setup@v2
-        with:
-          version: 7.21.0
-
       - name: Setup Node and Cache
         uses: actions/setup-node@v3
         with:
@@ -55,10 +51,6 @@ jobs:
         node-version: [18.x]
     steps:
       - uses: actions/checkout@v3
-
-      - uses: yarn/action-setup@v2
-        with:
-          version: 7.21.0
 
       - name: Setup Node and Cache
         uses: actions/setup-node@v3
