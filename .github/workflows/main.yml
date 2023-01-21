@@ -31,7 +31,7 @@ jobs:
         run: npm run type-check
 
       - name: Unit Tests
-        run: pnpm test-unity
+        run: pnpm test:unity
 
       - name: Create Artifact
         run: pnpm sls package --package pack
