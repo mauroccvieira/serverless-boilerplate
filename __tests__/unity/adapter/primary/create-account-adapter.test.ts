@@ -1,11 +1,11 @@
-import { handler } from "@adapters/primary/create-account-adapter";
+import { main } from "@adapters/primary/create-account/handler";
 
 describe("some text", () => {
   it("some test", () => {
-    expect(handler).toBeDefined();
+    expect(main).toBeDefined();
   });
 
   it("some test 2", () => {
-    expect(handler).toBeDefined();
+    expect(main).toBeDefined();
   });
 });
