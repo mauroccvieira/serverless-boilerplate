@@ -27,7 +27,7 @@
     "paths": {
       "@tests/*": ["__tests__/*"],
       "@domains/*": ["src/domains/*"],
-      "@services/*": ["src/services/*"],
+      "@packages/*": ["src/packages/*"],
       "@adapters/*": ["src/adapters/*"]
     }
   },

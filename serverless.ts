@@ -1,3 +1,4 @@
+import { functions } from "@adapters/primary";
 import type { AWS } from "@serverless/typescript";
 
 const serverlessConfiguration: AWS = {
@@ -8,20 +9,7 @@ const serverlessConfiguration: AWS = {
     name: "aws",
     runtime: "nodejs18.x"
   },
-  // import the function via paths
-  functions: {
-    createAccount: {
-      handler: "src/adapters/primary/create-account-adapter.handler",
-      events: [
-        {
-          httpApi: {
-            path: "/account",
-            method: "post"
-          }
-        }
-      ]
-    }
-  },
+  functions: { ...functions },
   package: { individually: true },
   custom: {
     esbuild: {
