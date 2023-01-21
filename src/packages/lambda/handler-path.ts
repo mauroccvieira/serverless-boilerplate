@@ -3,7 +3,7 @@ export const handlerPath = (context: string) => {
 
   if (!cwd)
     throw new Error("Invalid Environmnent", {
-      cause: " cwd process variable is undefined"
+      cause: "cwd process variable is undefined"
     });
 
   return `${cwd.substring(1).replace(/\\/g, "/")}`;
