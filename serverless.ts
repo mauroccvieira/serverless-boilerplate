@@ -17,7 +17,7 @@ const serverlessConfiguration: AWS = {
       minify: true,
       sourcemap: true,
       exclude: ["aws-sdk"],
-      packager: "pnpm",
+      packager: "yarn",
       target: "node18",
       platform: "node",
       concurrency: 10

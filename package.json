@@ -5,10 +5,10 @@
   "main": "handler.ts",
   "scripts": {
     "sls": "serverless",
-    "build": "pnpm sls package --aws-profile breakingmaurin",
+    "build": "yarn sls package --aws-profile breakingmaurin",
     "type-check": "echo \"Type-Check not implemented yet\"",
     "test:unity": "jest",
-    "deploy:dev": "pnpm sls deploy --aws-profile breakingmaurin --stage dev",
+    "deploy:dev": "yarn sls deploy --aws-profile breakingmaurin --stage dev",
     "lint": "eslint ./src --fix --cache",
     "lint:tests": "eslint ./__tests__ --fix --cache",
     "format": "prettier ./src --write",

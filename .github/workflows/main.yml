@@ -14,7 +14,7 @@ jobs:
       - name: Checkout files
         uses: actions/checkout@v3
 
-      - uses: pnpm/action-setup@v2
+      - uses: yarn/action-setup@v2
         with:
           version: 7.21.0
 
@@ -22,19 +22,19 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: pnpm
+          cache: yarn
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: yarn install --frozen-lockfile
 
       - name: Type Check
         run: npm run type-check
 
       - name: Unit Tests
-        run: pnpm test:unity
+        run: yarn test:unity
 
       - name: Create Artifact
-        run: pnpm sls package --package pack
+        run: yarn sls package --package pack
 
       - name: Zip artifact
         run: zip -r pack.zip pack
@@ -56,7 +56,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: pnpm/action-setup@v2
+      - uses: yarn/action-setup@v2
         with:
           version: 7.21.0
 
@@ -64,10 +64,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: pnpm
+          cache: yarn
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: yarn install --frozen-lockfile
 
       - uses: actions/download-artifact@v3
 
