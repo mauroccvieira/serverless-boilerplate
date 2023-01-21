@@ -6,21 +6,21 @@ const serverlessConfiguration: AWS = {
   plugins: ["serverless-esbuild", "serverless-offline"],
   provider: {
     name: "aws",
-    runtime: "nodejs18.x",
+    runtime: "nodejs18.x"
   },
   // import the function via paths
   functions: {
     createAccount: {
-      handler: "src/adapter/primary/create-account-adapter.handler",
+      handler: "src/adapters/primary/create-account-adapter.handler",
       events: [
         {
           httpApi: {
             path: "/account",
-            method: "post",
-          },
-        },
-      ],
-    },
+            method: "post"
+          }
+        }
+      ]
+    }
   },
   package: { individually: true },
   custom: {
@@ -32,9 +32,9 @@ const serverlessConfiguration: AWS = {
       packager: "pnpm",
       target: "node18",
       platform: "node",
-      concurrency: 10,
-    },
-  },
+      concurrency: 10
+    }
+  }
 };
 
 module.exports = serverlessConfiguration;
