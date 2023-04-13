@@ -117,6 +117,49 @@
     tslib "^2.3.1"
     uuid "^8.3.2"
 
+"@aws-sdk/client-eventbridge@^3.254.0":
+  version "3.254.0"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/client-eventbridge/-/client-eventbridge-3.254.0.tgz#a2dafd316be7a78bdf58bc4248aaec1196cfd1c3"
+  integrity sha512-VBdYnlv1RuvGNcJCBAde2GQmB4CBj3uVasar5YM+1LMlNNNYk5hWOWFgdXYwdoImAtOYITktIRNJbxRE1DhfHw==
+  dependencies:
+    "@aws-crypto/sha256-browser" "3.0.0"
+    "@aws-crypto/sha256-js" "3.0.0"
+    "@aws-sdk/client-sts" "3.254.0"
+    "@aws-sdk/config-resolver" "3.254.0"
+    "@aws-sdk/credential-provider-node" "3.254.0"
+    "@aws-sdk/fetch-http-handler" "3.254.0"
+    "@aws-sdk/hash-node" "3.254.0"
+    "@aws-sdk/invalid-dependency" "3.254.0"
+    "@aws-sdk/middleware-content-length" "3.254.0"
+    "@aws-sdk/middleware-endpoint" "3.254.0"
+    "@aws-sdk/middleware-host-header" "3.254.0"
+    "@aws-sdk/middleware-logger" "3.254.0"
+    "@aws-sdk/middleware-recursion-detection" "3.254.0"
+    "@aws-sdk/middleware-retry" "3.254.0"
+    "@aws-sdk/middleware-serde" "3.254.0"
+    "@aws-sdk/middleware-signing" "3.254.0"
+    "@aws-sdk/middleware-stack" "3.254.0"
+    "@aws-sdk/middleware-user-agent" "3.254.0"
+    "@aws-sdk/node-config-provider" "3.254.0"
+    "@aws-sdk/node-http-handler" "3.254.0"
+    "@aws-sdk/protocol-http" "3.254.0"
+    "@aws-sdk/signature-v4-multi-region" "3.254.0"
+    "@aws-sdk/smithy-client" "3.254.0"
+    "@aws-sdk/types" "3.254.0"
+    "@aws-sdk/url-parser" "3.254.0"
+    "@aws-sdk/util-base64" "3.208.0"
+    "@aws-sdk/util-body-length-browser" "3.188.0"
+    "@aws-sdk/util-body-length-node" "3.208.0"
+    "@aws-sdk/util-defaults-mode-browser" "3.254.0"
+    "@aws-sdk/util-defaults-mode-node" "3.254.0"
+    "@aws-sdk/util-endpoints" "3.254.0"
+    "@aws-sdk/util-retry" "3.254.0"
+    "@aws-sdk/util-user-agent-browser" "3.254.0"
+    "@aws-sdk/util-user-agent-node" "3.254.0"
+    "@aws-sdk/util-utf8-browser" "3.188.0"
+    "@aws-sdk/util-utf8-node" "3.208.0"
+    tslib "^2.3.1"
+
 "@aws-sdk/client-lambda@^3.241.0":
   version "3.254.0"
   resolved "https://registry.yarnpkg.com/@aws-sdk/client-lambda/-/client-lambda-3.254.0.tgz#c21a7353dd152766a82349dcadfca0b9a677c335"
@@ -606,6 +649,17 @@
     "@aws-sdk/types" "3.254.0"
     tslib "^2.3.1"
 
+"@aws-sdk/signature-v4-multi-region@3.254.0":
+  version "3.254.0"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/signature-v4-multi-region/-/signature-v4-multi-region-3.254.0.tgz#8f1e0e8cff9fb47dcade7dfcc5af88aa8c1590e8"
+  integrity sha512-pm1UlY98DnqtYJvG2NLOQfMHAvoJRE3gmH0i4U0qyZ1UFYsgLpWaxdRAr9fGI1icxqmArYKkXR9NlzmJYASotw==
+  dependencies:
+    "@aws-sdk/protocol-http" "3.254.0"
+    "@aws-sdk/signature-v4" "3.254.0"
+    "@aws-sdk/types" "3.254.0"
+    "@aws-sdk/util-arn-parser" "3.208.0"
+    tslib "^2.3.1"
+
 "@aws-sdk/signature-v4@3.254.0":
   version "3.254.0"
   resolved "https://registry.yarnpkg.com/@aws-sdk/signature-v4/-/signature-v4-3.254.0.tgz#a68a1f420c98cbfe1d5f15227172d26bb7980338"
@@ -653,6 +707,13 @@
   dependencies:
     "@aws-sdk/querystring-parser" "3.254.0"
     "@aws-sdk/types" "3.254.0"
+    tslib "^2.3.1"
+
+"@aws-sdk/util-arn-parser@3.208.0":
+  version "3.208.0"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/util-arn-parser/-/util-arn-parser-3.208.0.tgz#56b6ae4699c3140bb27dcede5146876fef04e823"
+  integrity sha512-QV4af+kscova9dv4VuHOgH8wEr/IIYHDGcnyVtkUEqahCejWr1Kuk+SBK0xMwnZY5LSycOtQ8aeqHOn9qOjZtA==
+  dependencies:
     tslib "^2.3.1"
 
 "@aws-sdk/util-base64@3.208.0":
@@ -712,6 +773,13 @@
     "@aws-sdk/node-config-provider" "3.254.0"
     "@aws-sdk/property-provider" "3.254.0"
     "@aws-sdk/types" "3.254.0"
+    tslib "^2.3.1"
+
+"@aws-sdk/util-dynamodb@^3.254.0":
+  version "3.254.0"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/util-dynamodb/-/util-dynamodb-3.254.0.tgz#0de880df8a2a6d9549d7a6025a562af71619c3e4"
+  integrity sha512-m3oHBIEHfe4r2O2eW5oqvAcrFmuNicoZ3MR2A6+chxEWUyxRZwNqUHmfFSSBKrnqg9lK4pjHcpJ3iHCkCqXsOA==
+  dependencies:
     tslib "^2.3.1"
 
 "@aws-sdk/util-endpoints@3.254.0":
@@ -2839,7 +2907,7 @@ ajv@^6.10.0, ajv@^6.12.4:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-ajv@^8.0.0, ajv@^8.11.0, ajv@^8.11.2:
+ajv@^8.0.0, ajv@^8.11.0, ajv@^8.11.2, ajv@^8.12.0:
   version "8.12.0"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-8.12.0.tgz#d1a0527323e22f53562c567c00991577dfbe19d1"
   integrity sha512-sRu1kpcO9yLtYxBKvqfTeh9KzZEwO3STyX1HT+4CaDzC6HpTGYhIhPIzj9XuKU7KYDwnaeh5hcOwjy1QuJzBPA==

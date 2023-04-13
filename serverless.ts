@@ -1,5 +1,6 @@
 import { functions } from "@adapters/primary";
 import type { AWS } from "@serverless/typescript";
+import { resources } from "serverless/resources";
 
 const serverlessConfiguration: AWS = {
   service: "serverless-boilerplate",
@@ -22,7 +23,8 @@ const serverlessConfiguration: AWS = {
       platform: "node",
       concurrency: 10
     }
-  }
+  },
+  resources: { ...resources }
 };
 
 module.exports = serverlessConfiguration;

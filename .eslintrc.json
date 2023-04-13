@@ -9,7 +9,25 @@
     "plugin:sonarjs/recommended",
     "prettier"
   ],
-  "overrides": [],
+  "overrides": [
+    {
+      "files": ["src/modules.d.ts"],
+      "rules": {
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "interface",
+            "format": ["PascalCase"]
+          },
+          {
+            "selector": "typeProperty",
+            "format": ["UPPER_CASE"],
+            "leadingUnderscore": "allow"
+          }
+        ]
+      }
+    }
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest"
@@ -26,10 +44,22 @@
       },
       {
         "selector": "classProperty",
+        "modifiers": [
+          "abstract",
+          "override",
+          "protected",
+          "public",
+          "requiresQuotes",
+          "static"
+        ],
         "format": ["camelCase"]
       },
       {
-        "selector": "interface",
+        "selector": ["interface"],
+        "format": ["PascalCase"]
+      },
+      {
+        "selector": "typeAlias",
         "format": ["PascalCase"]
       },
       {
@@ -46,17 +76,19 @@
         "leadingUnderscore": "allow"
       },
       {
-        "selector": "memberLike",
+        "selector": "classProperty",
         "modifiers": ["private"],
-        "format": ["camelCase"]
-      },
-      {
-        "selector": "property",
-        "format": ["PascalCase", "camelCase", "UPPER_CASE"]
+        "format": ["camelCase"],
+        "leadingUnderscore": "require"
       },
       {
         "selector": "objectLiteralProperty",
         "format": ["PascalCase", "camelCase"]
+      },
+      {
+        "selector": "typeParameter",
+        "format": ["PascalCase"],
+        "prefix": ["T"]
       }
     ]
   }

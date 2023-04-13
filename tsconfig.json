@@ -26,6 +26,7 @@
     "baseUrl": ".",
     "paths": {
       "@tests/*": ["__tests__/*"],
+      "@errors/*": ["src/domains/errors/*"],
       "@domains/*": ["src/domains/*"],
       "@packages/*": ["src/packages/*"],
       "@adapters/*": ["src/adapters/*"]
