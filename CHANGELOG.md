@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/mauroccvieira/serverless-boilerplate/compare/v1.0.0...v1.1.0) (2023-04-13)
+
+
+### Features
+
+* add create account functionn ([09859b3](https://github.com/mauroccvieira/serverless-boilerplate/commit/09859b3bbfe355d983f3bcf006a146b79fc43f11))
+
 ## 1.0.0 (2023-01-21)
 
 
