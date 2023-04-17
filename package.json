@@ -21,7 +21,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.3.0",
     "@commitlint/config-conventional": "^17.3.0",
-    "@serverless/typescript": "^3.25.0",
+    "@serverless/typescript": "^3.29.0",
     "@types/aws-lambda": "^8.10.101",
     "@types/jest": "^29.5.0",
     "@types/node": "^18.11.18",
