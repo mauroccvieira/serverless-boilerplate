@@ -1,6 +1,5 @@
-import { functions } from "@adapters/primary";
+import { functions } from "@adapters/primaries";
 import type { AWS } from "@serverless/typescript";
-import { resources } from "serverless/resources";
 
 const serverlessConfiguration: AWS = {
   service: "serverless-boilerplate",
@@ -8,7 +7,7 @@ const serverlessConfiguration: AWS = {
   plugins: ["serverless-esbuild", "serverless-offline"],
   provider: {
     name: "aws",
-    runtime: "nodejs18.x"
+    runtime: "nodejs20.x"
   },
   functions: { ...functions },
   package: { individually: true },
@@ -19,12 +18,11 @@ const serverlessConfiguration: AWS = {
       sourcemap: true,
       exclude: ["aws-sdk"],
       packager: "yarn",
-      target: "node18",
+      target: "node20",
       platform: "node",
       concurrency: 10
     }
-  },
-  resources: { ...resources }
+  }
 };
 
 module.exports = serverlessConfiguration;

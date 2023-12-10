@@ -1,7 +1,6 @@
 {
   "*.ts": [
-    "yarn lint ",
-    "yarn lint:tests",
+    "yarn lint ",    
     "yarn format",
     "yarn format:tests",
     "yarn test:unity --findRelatedTests --passWithNoTests"
