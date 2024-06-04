@@ -2,9 +2,10 @@ export const esbuild = {
   bundle: true,
   minify: true,
   sourcemap: true,
-  exclude: ["aws-sdk"],
+  exclude: ["aws-sdk/*"],
   packager: "yarn",
-  target: "node18",
+  target: "node20",
+  define: { "require.resolve": undefined },
   platform: "node",
   concurrency: 10
 };
