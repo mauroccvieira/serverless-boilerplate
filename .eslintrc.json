@@ -91,5 +91,6 @@
         "prefix": ["T"]
       }
     ]
-  }
+  },
+  "ignorePatterns": ["configuration/*"]
 }
