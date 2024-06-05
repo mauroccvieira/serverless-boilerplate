@@ -3190,6 +3190,11 @@ acorn@^8.4.1, acorn@^8.8.1, acorn@^8.9.0:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.11.3.tgz#71e0b14e13a4ec160724b38fb7b0f233b1b81d7a"
   integrity sha512-Y9rRfJG5jcKOE0CLisYbojUjIrIEE7AGMzA/Sm4BslANhbS+cDMpgBdcPT91oJ7OuJ9hYJBx59RjbhxVnrF8Xg==
 
+adm-zip@^0.5.10:
+  version "0.5.14"
+  resolved "https://registry.yarnpkg.com/adm-zip/-/adm-zip-0.5.14.tgz#2c557c0bf12af4311cf6d32970f4060cf8133b2a"
+  integrity sha512-DnyqqifT4Jrcvb8USYjp6FHtBpEIz1mnXu6pTRHZ0RL69LbQYiO+0lDFg5+OKA7U29oWSs3a/i8fhn8ZcceIWg==
+
 adm-zip@^0.5.5:
   version "0.5.13"
   resolved "https://registry.yarnpkg.com/adm-zip/-/adm-zip-0.5.13.tgz#e2fbd87d0bb75603ccfdcb03a57a57c4831d9758"
@@ -3498,7 +3503,7 @@ available-typed-arrays@^1.0.7:
   dependencies:
     possible-typed-array-names "^1.0.0"
 
-aws-sdk@^2.1404.0:
+aws-sdk@^2.1404.0, aws-sdk@^2.402.0:
   version "2.1633.0"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1633.0.tgz#1435241ece67735d52701caf96b6b8bca4f6ef76"
   integrity sha512-9OUTdosQgZO6P6hPyEOUDvm4cymbMB0Qn1etucPql95DHjNyIex3FJOBbeRikU+5Wt9Djgdcr+BqAee2Lv/7iw==
@@ -4875,6 +4880,11 @@ es6-iterator@^2.0.3, es6-iterator@~2.0.3:
     d "1"
     es5-ext "^0.10.35"
     es6-symbol "^3.1.1"
+
+es6-promisify@^6.0.1:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/es6-promisify/-/es6-promisify-6.1.1.tgz#46837651b7b06bf6fff893d03f29393668d01621"
+  integrity sha512-HBL8I3mIki5C1Cc9QjKUenHtnG0A5/xA8Q/AllRcfiwl2CZFXGK7ddBiCoRwAix4i2KxcQfjtIVcrVbB3vbmwg==
 
 es6-set@^0.1.6:
   version "0.1.6"
@@ -9360,6 +9370,15 @@ serverless-esbuild@^1.52.1:
     p-map "^4.0.0"
     ramda "^0.28.0"
     semver "^7.3.8"
+
+serverless-localstack@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/serverless-localstack/-/serverless-localstack-1.2.0.tgz#40d4ed94763bc46725cb3d8092a075a632fb1d0f"
+  integrity sha512-JXdh1QeaSKmHU57VvfIOEEuANdaUi9J0Y86L0N+BRy04uxu8F22Mup/LxVQnzPl12eolc0Xi5HmtbZGv/H2ufQ==
+  dependencies:
+    adm-zip "^0.5.10"
+    aws-sdk "^2.402.0"
+    es6-promisify "^6.0.1"
 
 serverless-offline@^13.6.0:
   version "13.6.0"
