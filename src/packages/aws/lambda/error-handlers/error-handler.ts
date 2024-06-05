@@ -1,6 +1,6 @@
 import { ValidationError } from "@errors/validation-error";
-import { internalErrorHandler } from "@packages/lambda/error-handlers/internalErrorHandler";
-import { validationErrorHandler } from "@packages/lambda/error-handlers/validationErrorHandler";
+import { internalErrorHandler } from "@packages/aws/lambda/error-handlers/internal-error-handler";
+import { validationErrorHandler } from "@packages/aws/lambda/error-handlers/validation-error-handler";
 import type { APIGatewayProxyResult } from "aws-lambda";
 
 export function errorHandler(error: unknown): APIGatewayProxyResult {

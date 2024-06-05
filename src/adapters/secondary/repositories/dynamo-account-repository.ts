@@ -2,7 +2,7 @@ import { PutItemCommand } from "@aws-sdk/client-dynamodb";
 import { marshall } from "@aws-sdk/util-dynamodb";
 import type { Account } from "@domains/entities/account";
 import type { AccountRepository } from "@domains/repositories/createAccountRepository";
-import { DYNAMODB_CLIENT } from "@packages/dynamodb/dynamo-client";
+import { DYNAMODB_CLIENT } from "@packages/aws/dynamodb/dynamo-client";
 
 export class DynamoAccountRepository implements AccountRepository {
   private readonly _tableName = "Account";

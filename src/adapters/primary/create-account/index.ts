@@ -1,4 +1,4 @@
-import { handlerPath } from "@packages/lambda/handler-path";
+import { handlerPath } from "@packages/aws/lambda/handler-path";
 import type { AWS } from "@serverless/typescript";
 
 export const createAccount: NonNullable<AWS["functions"]>[string] = {

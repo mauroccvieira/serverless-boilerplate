@@ -1,4 +1,4 @@
-import { handlerPath } from "@packages/lambda/handler-path";
+import { handlerPath } from "@packages/aws/lambda/handler-path";
 
 describe("Testing handler path", () => {
   it("Is defined", () => {

@@ -7,7 +7,7 @@
   "scripts": {
     "sls": "serverless",
     "start": "yarn sls offline --reloadHandler --stage local",
-    "type-check": "echo \"Type-Check not implemented yet\"",
+    "type-check": "tsc --noEmit",
     "test:unity": "jest",
     "deploy:local": "yarn sls deploy --stage local",
     "localstack:start": "localstack start",

@@ -1,5 +1,5 @@
 import { ValidationError } from "@errors/validation-error";
-import { errorHandler } from "@packages/lambda/error-handlers/errorHandler";
+import { errorHandler } from "@packages/aws/lambda/error-handlers/error-handler";
 describe("errorHandler", () => {
   it("Should handle internal errors", () => {
     expect(errorHandler(new Error())).toEqual({

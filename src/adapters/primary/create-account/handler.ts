@@ -1,7 +1,7 @@
 import { DynamoAccountRepository } from "@adapters/secondary/repositories/dynamo-account-repository";
 import { createCustomerAccountUseCase } from "@domains/usecases/create-account";
-import { EventBridgePublisher } from "@packages/event-bridge/event-bridge-publisher";
-import { errorHandler } from "@packages/lambda/error-handlers/errorHandler";
+import { EventBridgePublisher } from "@packages/aws/event-bridge/event-bridge-publisher";
+import { errorHandler } from "@packages/aws/lambda/error-handlers/error-handler";
 import type { APIGatewayProxyEvent, APIGatewayProxyResult } from "aws-lambda";
 
 const logger = console;

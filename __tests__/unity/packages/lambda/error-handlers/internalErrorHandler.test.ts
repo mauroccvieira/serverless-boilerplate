@@ -1,4 +1,4 @@
-import { internalErrorHandler } from "@packages/lambda/error-handlers/internalErrorHandler";
+import { internalErrorHandler } from "@packages/aws/lambda/error-handlers/internal-error-handler";
 
 describe("internalErrorHandler", () => {
   it("should return a 500 response", () => {
