@@ -1,0 +1,23 @@
+name: Generate test badges
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  generate-badges:
+    name: 📣 Generate cool badges
+    runs-on: ubuntu-latest
+    steps:
+    - name: ⬇️ Checkout repo
+      uses: actions/checkout@v4
+
+    - name: 🔍 Tests
+      run: yarn test:ci
+
+    - name: ⚙️ Generating coverage badges
+      uses: jpb06/coverage-badges-action@latest
+        with:
+          branches: main
+          badges-icon: jest
