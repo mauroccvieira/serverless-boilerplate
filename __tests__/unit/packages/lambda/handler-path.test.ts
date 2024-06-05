@@ -13,6 +13,6 @@ describe("Testing handler path", () => {
 
   it("Get current file path relative to current working directory", () => {
     const path = handlerPath(__dirname);
-    expect(path).toBe("__tests__/unity/packages/lambda");
+    expect(path).toBe("__tests__/unit/packages/lambda");
   });
 });

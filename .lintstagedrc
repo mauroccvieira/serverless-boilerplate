@@ -4,6 +4,7 @@
     "yarn lint:tests",
     "yarn format",
     "yarn format:tests",
-    "yarn test:unity --findRelatedTests --passWithNoTests"
+    "yarn test:unit --findRelatedTests --passWithNoTests",
+    "yarn test:integration --findRelatedTests --passWithNoTests"
   ]
 }

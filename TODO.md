@@ -7,8 +7,9 @@ Serverless boilerplate for personal use, but feel free to use it.
 [x] Husky
 [x] Configure conventional-commits hook with husky
 [x] Configure Trunk-based development (TBD)
-[ ] Localstack
-[ ] PR test and validation Workflow
+[x] Localstack for local development
+[x] Setup jest for unit, integration and e2e testing
+[ ] Tests in CI
 [x] Eslint
 [ ] Add Middy
 [ ] Event Bridge
