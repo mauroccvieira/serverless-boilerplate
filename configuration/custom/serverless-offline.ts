@@ -1,6 +1,7 @@
 export const serverlessOffline = {
   httpPort: 8000,
-  lambdaPort: 9000
+  lambdaPort: 9000,
+  host: "127.0.0.1"
 } satisfies ServerlessOfflineOptions;
 
 export interface ServerlessOfflineOptions {

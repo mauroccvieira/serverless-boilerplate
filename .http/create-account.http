@@ -1,7 +1,7 @@
-POST http://localhost:3000/account  HTTP/1.1
+POST http://localhost:8000/account  HTTP/1.1
 content-type: application/json
 
 {
     "firstName": "Mauro",
-    "surname2": "Vieira"
+    "surname": "Vieira"
 }
