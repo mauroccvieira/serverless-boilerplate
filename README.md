@@ -1,5 +1,11 @@
 # Serverless Boilerplate - Node.js & Typescript
 
+![Branches](https://raw.githubusercontent.com/mauroccvieira/serverless-boilerplate/badges/badges/coverage-branches.svg)
+![Functions](https://raw.githubusercontent.com/mauroccvieira/serverless-boilerplate/badges/badges/coverage-functions.svg)
+![Lines](https://raw.githubusercontent.com/mauroccvieira/serverless-boilerplate/badges/badges/coverage-lines.svg)
+![Statements](https://raw.githubusercontent.com/mauroccvieira/serverless-boilerplate/badges/badges/coverage-statements.svg)
+![Coverage total](https://raw.githubusercontent.com/mauroccvieira/serverless-boilerplate/badges/badges/coverage-total.svg)
+
 This is a boilerplate for a serverless project using Node.js and Typescript.
 
 ## Features
