@@ -1,8 +1,7 @@
+import { HttpApiHandlerFactoryProperties } from "@packages/middlewares/http-api/types";
 import { APIGatewayProxyEvent } from "aws-lambda";
 
-import httpApiMiddleware, {
-  HttpApiHandlerFactoryProperties
-} from "../../../../../src/packages/middlewares/http-api/http-api.middleware";
+import httpApiMiddleware from "../../../../../src/packages/middlewares/http-api/http-api.middleware";
 
 describe("httpApiHandlerFactory", () => {
   const sut = httpApiMiddleware;
@@ -20,7 +19,7 @@ describe("httpApiHandlerFactory", () => {
 
   it("should return a function", () => {
     // Arrange
-    const properties: HttpApiHandlerFactoryProperties<any> = {
+    const properties: HttpApiHandlerFactoryProperties<unknown> = {
       handler: jest.fn(),
       presenter: jest.fn()
     };

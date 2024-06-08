@@ -1,4 +1,4 @@
-import { Presenter } from "@packages/middlewares/presenter";
+import { Presenter } from "@packages/middlewares/types";
 import { APIGatewayProxyResult, Callback } from "aws-lambda";
 
 export function httpApiCallback<RESPONSE>(

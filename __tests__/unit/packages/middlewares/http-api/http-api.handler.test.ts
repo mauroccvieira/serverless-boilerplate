@@ -1,6 +1,6 @@
 import { ResponseBuilder } from "@packages/aws/lambda/response-builder";
-import { HttpApiHandlerFactoryProperties } from "@packages/middlewares/http-api/http-api.middleware";
 import { httpApiPresenter } from "@packages/middlewares/http-api/http-api.presenter";
+import { HttpApiHandlerFactoryProperties } from "@packages/middlewares/http-api/types";
 import { APIGatewayProxyEvent, Context } from "aws-lambda";
 
 import { httpApiHandler } from "../../../../../src/packages/middlewares/http-api/http-api.handler";

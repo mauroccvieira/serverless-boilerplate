@@ -3,19 +3,17 @@ import {
   APIGatewayProxyEvent,
   APIGatewayProxyResult,
   Callback,
-  Context,
-  Handler
+  Context
 } from "aws-lambda";
 
 import { httpApiCallback } from "./http-api.callback";
-import { HttpApiHandlerFactoryProperties } from "./http-api.middleware";
 import { httpApiPresenter } from "./http-api.presenter";
-
-type ApiGatewayHandler = Handler<APIGatewayProxyEvent, APIGatewayProxyResult>;
+import { HttpApiHandlerFactoryProperties } from "./types";
+import { HttpApiHandler } from "./types";
 
 export function httpApiHandler<RESPONSE>(
   properties: HttpApiHandlerFactoryProperties<RESPONSE>
-): ApiGatewayHandler {
+): HttpApiHandler {
   const { handler, presenter } = properties;
   return async (
     event: APIGatewayProxyEvent,

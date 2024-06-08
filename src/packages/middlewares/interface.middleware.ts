@@ -1,7 +1,6 @@
-import middy, { MiddyfiedHandler } from "@middy/core";
+import middy from "@middy/core";
+import { WrappedHandler } from "@packages/middlewares/types";
 import { Handler } from "aws-lambda";
-
-export type WrappedHandler = MiddyfiedHandler;
 
 export const wrapHandler = (handler: Handler): WrappedHandler => {
   return middy(handler);
