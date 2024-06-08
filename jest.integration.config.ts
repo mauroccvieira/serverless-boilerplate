@@ -7,7 +7,6 @@ module.exports = {
   testMatch: ["**/__tests__/**/integration/**/*.[jt]s?(x)"],
   preset: "ts-jest",
   testEnvironment: "node",
-  collectCoverageFrom: ["src/**/*.ts", "!/node_modules/"],
   moduleNameMapper: pathsToModuleNameMapper(tsconfig.compilerOptions.paths, {
     prefix: "<rootDir>/"
   })

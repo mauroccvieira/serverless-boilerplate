@@ -1,7 +1,3 @@
-# TODO
-
-Serverless boilerplate for personal use, but feel free to use it.
-
 ## Tech Stuff
 
 [x] Husky

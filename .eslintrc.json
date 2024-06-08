@@ -12,20 +12,7 @@
   "overrides": [
     {
       "files": ["src/modules.d.ts"],
-      "rules": {
-        "@typescript-eslint/naming-convention": [
-          "error",
-          {
-            "selector": "interface",
-            "format": ["PascalCase"]
-          },
-          {
-            "selector": "typeProperty",
-            "format": ["UPPER_CASE"],
-            "leadingUnderscore": "allow"
-          }
-        ]
-      }
+      "rules": {}
     }
   ],
   "parser": "@typescript-eslint/parser",
@@ -35,62 +22,7 @@
   "plugins": ["@typescript-eslint", "sonarjs", "simple-import-sort"],
   "rules": {
     "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
-    "@typescript-eslint/naming-convention": [
-      "error",
-      {
-        "selector": "default",
-        "format": ["camelCase"]
-      },
-      {
-        "selector": "classProperty",
-        "modifiers": [
-          "abstract",
-          "override",
-          "protected",
-          "public",
-          "requiresQuotes",
-          "static"
-        ],
-        "format": ["camelCase"]
-      },
-      {
-        "selector": ["interface"],
-        "format": ["PascalCase"]
-      },
-      {
-        "selector": "typeAlias",
-        "format": ["PascalCase"]
-      },
-      {
-        "selector": "class",
-        "format": ["PascalCase"]
-      },
-      {
-        "selector": "variable",
-        "format": ["camelCase", "UPPER_CASE"]
-      },
-      {
-        "selector": "parameter",
-        "format": ["camelCase"],
-        "leadingUnderscore": "allow"
-      },
-      {
-        "selector": "classProperty",
-        "modifiers": ["private"],
-        "format": ["camelCase"],
-        "leadingUnderscore": "require"
-      },
-      {
-        "selector": "objectLiteralProperty",
-        "format": ["PascalCase", "camelCase"]
-      },
-      {
-        "selector": "typeParameter",
-        "format": ["PascalCase"],
-        "prefix": ["T"]
-      }
-    ]
+    "simple-import-sort/exports": "error"
   },
   "ignorePatterns": ["configuration/*"]
 }

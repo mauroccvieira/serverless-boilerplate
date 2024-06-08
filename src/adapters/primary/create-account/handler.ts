@@ -2,6 +2,7 @@ import { DynamoAccountRepository } from "@adapters/secondary/repositories/dynamo
 import { createCustomerAccountUseCase } from "@domains/usecases/create-account";
 import { EventBridgePublisher } from "@packages/aws/event-bridge/event-bridge-publisher";
 import { errorHandler } from "@packages/aws/lambda/error-handlers/error-handler";
+import { ResponseBuilder } from "@packages/aws/lambda/response-builder";
 import type { APIGatewayProxyEvent, APIGatewayProxyResult } from "aws-lambda";
 
 const logger = console;
@@ -12,7 +13,13 @@ export const main = async (
     const repository = new DynamoAccountRepository();
     const publisher = new EventBridgePublisher();
 
-    const { firstName, surname } = JSON.parse(event.body!);
+    if (!event.body)
+      return new ResponseBuilder()
+        .withJsonBody({ message: "Invalid request" })
+        .withStatusCode(400)
+        .build();
+
+    const { firstName, surname } = JSON.parse(event.body);
 
     const response = await createCustomerAccountUseCase(
       {
