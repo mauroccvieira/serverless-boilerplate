@@ -3,7 +3,7 @@ import { pathsToModuleNameMapper } from "ts-jest";
 import tsconfig from "tsconfig.json";
 
 module.exports = {
-  silent: true,
+  silent: false,
   projects: [
     "<rootDir>/jest.unit.config.ts",
     "<rootDir>/jest.integration.config.ts",

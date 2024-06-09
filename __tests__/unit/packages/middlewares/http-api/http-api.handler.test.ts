@@ -1,9 +1,8 @@
 import { ResponseBuilder } from "@packages/aws/lambda/response-builder";
+import { httpApiHandler } from "@packages/middlewares/http-api";
 import { httpApiPresenter } from "@packages/middlewares/http-api/http-api.presenter";
 import { HttpApiHandlerFactoryProperties } from "@packages/middlewares/http-api/types";
 import { APIGatewayProxyEvent, Context } from "aws-lambda";
-
-import { httpApiHandler } from "../../../../../src/packages/middlewares/http-api/http-api.handler";
 
 jest.mock("@packages/middlewares/http-api/http-api.presenter", () => ({
   httpApiPresenter: jest.fn()

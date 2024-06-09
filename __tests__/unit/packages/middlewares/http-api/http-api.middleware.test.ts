@@ -13,7 +13,9 @@ describe("httpApiHandlerFactory", () => {
 
   beforeEach(() => {
     context = {};
-    event = {} as APIGatewayProxyEvent;
+    event = {
+      httpMethod: "GET"
+    } as APIGatewayProxyEvent;
     jest.resetAllMocks();
   });
 
