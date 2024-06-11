@@ -1,43 +1,43 @@
-import type { CreateAccountProps } from "@domains/dto/create-account-props";
-import type { NewAccountProps } from "@domains/dto/new-account-props";
-import type { UnmarshalledAccount } from "@domains/dto/unmarshalled-account";
-import { Entity } from "@domains/entities/entitiy";
-import { ACCOUNT_SCHEMA } from "@domains/schemas/account-schema";
+import { Entity } from "@domains/entities/entity";
+import { randomUUID } from "crypto";
 
-export class Account extends Entity<CreateAccountProps> {
-  private constructor({
-    id,
-    createdAt,
-    updatedAt,
-    ...props
-  }: CreateAccountProps) {
-    super(props, id, createdAt, updatedAt);
+export class Account implements Entity<string> {
+  public id: string;
+  public firstName: string;
+  public surname: string;
+  public createdAt: Date;
+  public updatedAt: Date;
+
+  constructor(properties: AccountProperties) {
+    this.id = properties.id;
+    this.firstName = properties.firstName;
+    this.surname = properties.surname;
+    this.createdAt = properties.createdAt;
+    this.updatedAt = properties.updatedAt;
   }
 
-  public static createAccount(props: NewAccountProps): Account {
-    const customerAccountProps: CreateAccountProps = {
+  public static newAccount(props: NewAccountProperties): Account {
+    const customerAccountProps: AccountProperties = {
       firstName: props.firstName,
       surname: props.surname,
-      createdAt: new Date().toISOString()
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      id: randomUUID()
     };
 
-    const instance: Account = new Account(customerAccountProps);
-    instance.validate(ACCOUNT_SCHEMA);
-
-    return instance;
-  }
-
-  public toDto(): UnmarshalledAccount {
-    return {
-      id: this.id,
-      createdAt: this.createdAt,
-      updatedAt: this.updatedAt,
-      firstName: this.props.firstName,
-      surname: this.props.surname
-    };
-  }
-
-  public static toDomain(raw: UnmarshalledAccount): Account {
-    return new Account(raw);
+    return new Account(customerAccountProps);
   }
 }
+
+export interface AccountProperties {
+  id: string;
+  firstName: string;
+  surname: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export type NewAccountProperties = Pick<
+  AccountProperties,
+  "firstName" | "surname"
+>;

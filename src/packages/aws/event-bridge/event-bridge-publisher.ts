@@ -3,7 +3,7 @@ import {
   EventBridgeClientConfig,
   PutEventsCommand
 } from "@aws-sdk/client-eventbridge";
-import type { Event } from "@domains/events/event";
+import { EventInterface } from "@domains/events/event";
 import type { EventPublisher } from "@domains/events/event-repository";
 const defaultConfiguration: EventBridgeClientConfig = {};
 if (process.env.IS_OFFLINE) {
@@ -18,12 +18,12 @@ if (process.env.IS_OFFLINE) {
 const CLIENT = new EventBridgeClient(defaultConfiguration);
 
 export class EventBridgePublisher implements EventPublisher {
-  async publish(event: Event): Promise<void> {
+  async publish(event: EventInterface): Promise<void> {
     const command = new PutEventsCommand({
       Entries: [
         {
-          Detail: JSON.stringify(event.dto),
-          DetailType: event.name,
+          Detail: JSON.stringify(event),
+          DetailType: event.schemaName,
           Source: process.env.AWS_LAMBDA_FUNCTION_NAME,
           Time: event.time
         }

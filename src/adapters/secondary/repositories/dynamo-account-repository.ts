@@ -1,21 +1,15 @@
-import { PutItemCommand } from "@aws-sdk/client-dynamodb";
-import { marshall } from "@aws-sdk/util-dynamodb";
-import type { Account } from "@domains/entities/account";
+import { Account } from "@domains/entities/account";
 import type { AccountRepository } from "@domains/repositories/createAccountRepository";
-import { DYNAMODB_CLIENT } from "@packages/aws/dynamodb/dynamo-client";
+import { ddb } from "@packages/aws/dynamodb/dynamo-client";
 
 export class DynamoAccountRepository implements AccountRepository {
   private readonly _tableName = "Account";
 
-  async create(account: Account): Promise<Account> {
-    const item = marshall(account.toDto());
-
-    const command = new PutItemCommand({
+  async save(account: Account): Promise<Account> {
+    await ddb.put({
       TableName: this._tableName,
-      Item: item
+      Item: account
     });
-
-    await DYNAMODB_CLIENT.send(command);
 
     return account;
   }

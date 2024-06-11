@@ -1,13 +1,36 @@
-import type { CreateAccountProps } from "@domains/dto/create-account-props";
+import { AccountProperties } from "@domains/entities/account";
+import { EventInterface } from "@domains/events/event";
 
-import { Event } from "./event";
+export class AccountCreatedEvent implements EventInterface, AccountProperties {
+  static _schemaName = "AccountCreatedEvent";
 
-export class AccountCreatedEvent extends Event {
   time: Date;
-  name = "account_created";
+  schemaName = AccountCreatedEvent._schemaName;
+  id: string;
+  firstName: string;
+  surname: string;
 
-  constructor(dto: CreateAccountProps) {
-    super(dto);
-    this.time = new Date(dto.createdAt || new Date().getTime());
+  createdAt: Date;
+  updatedAt: Date;
+
+  constructor(entity: AccountProperties) {
+    this.schemaName = AccountCreatedEvent._schemaName;
+    this.id = entity.id;
+    this.firstName = entity.firstName;
+    this.surname = entity.surname;
+    this.createdAt = entity.createdAt;
+    this.updatedAt = entity.updatedAt;
+    this.time = new Date();
+  }
+
+  toJSON() {
+    return {
+      schemaName: this.schemaName,
+      id: this.id,
+      firstName: this.firstName,
+      surname: this.surname,
+      createdAt: this.createdAt,
+      updatedAt: this.updatedAt
+    };
   }
 }

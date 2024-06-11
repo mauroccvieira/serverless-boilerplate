@@ -1,5 +1,5 @@
-import type { Event } from "./event";
+import { EventInterface } from "@domains/events/event";
 
 export interface EventPublisher {
-  publish(event: Event): Promise<void>;
+  publish(event: EventInterface): Promise<void>;
 }
