@@ -58,7 +58,7 @@
     "@aws-sdk/util-dynamodb": "^3.254.0",
     "@middy/core": "4",
     "@middy/event-normalizer": "^4.4.0",
-    "@middy/http-cors": "^4.4.0",
+    "@middy/http-cors": "^5.4.0",
     "@middy/http-error-handler": "^4.4.0",
     "@middy/http-header-normalizer": "^4.4.0",
     "ajv": "^8.12.0",
