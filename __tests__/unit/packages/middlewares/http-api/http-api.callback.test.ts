@@ -1,7 +1,7 @@
-import { httpApiCallback } from "@packages/middlewares/http-api/http-api.callback";
+import { withPresenter } from "@packages/middlewares/http-api/utils/with-callback-presenter";
 
 describe("httpApiCallback", () => {
-  const sut = httpApiCallback;
+  const sut = withPresenter;
 
   const mockedPresenter = jest.fn();
   const mockedCb = jest.fn();

@@ -5,11 +5,11 @@
 [x] Configure Trunk-based development (TBD)
 [x] Localstack for local development
 [x] Setup jest for unit, integration and e2e testing
-[ ] Tests in CI
 [x] Eslint
-[ ] Add Middy
-[ ] Event Bridge
 [x] Unity testing
+[ ] Add Middy
+[ ] Tests in CI
+[ ] Event Bridge
 [ ] Integration testing
 [ ] E2E testing
 

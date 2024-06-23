@@ -1,8 +1,7 @@
 import { ResponseBuilder } from "@packages/aws/lambda/response-builder";
+import httpApiMiddleware from "@packages/middlewares/http-api/http-api.middleware";
 import { HttpApiHandlerFactoryProperties } from "@packages/middlewares/http-api/types";
 import { APIGatewayProxyEvent, Context } from "aws-lambda";
-
-import httpApiMiddleware from "../../../../../src/packages/middlewares/http-api/http-api.middleware";
 
 describe("httpApiHandlerFactory", () => {
   const sut = httpApiMiddleware;

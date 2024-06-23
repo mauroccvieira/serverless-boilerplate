@@ -32,6 +32,15 @@ export class ResponseBuilder {
       body: this._body
     };
   }
+
+  static internalServerError(): APIGatewayProxyResult {
+    return new ResponseBuilder()
+      .withStatusCode(HttpStatusCode.INTERNAL_SERVER_ERROR)
+      .withJsonBody({
+        message: "Internal server error"
+      })
+      .build();
+  }
 }
 
 export enum HttpStatusCode {
