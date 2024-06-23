@@ -11,6 +11,7 @@ export type HttpApiHandler = Handler<
 >;
 
 export interface HttpApiHandlerFactoryProperties<RESPONSE> {
+  bodySchema?: object;
   handler: Handler<APIGatewayProxyEvent, RESPONSE>;
   presenter?: Presenter<
     Awaited<RESPONSE> | RESPONSE | void,

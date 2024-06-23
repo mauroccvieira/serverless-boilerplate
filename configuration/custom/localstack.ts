@@ -3,7 +3,7 @@ export const localstack = {
   autostart: true,
   host: "http://localhost",
   docker: {
-    compose_file: "/localstack/docker-compose.yml"
+    compose_file: "./localstack/docker-compose.yml"
   }
 } satisfies LocalstackOptions;
 

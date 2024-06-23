@@ -19,13 +19,15 @@
     "test:integration": "jest --projects ./jest.integration.config.ts",
     "test:e2e": "jest --projects ./jest.e2e.config.ts",
     "deploy:local": "yarn sls deploy --stage local",
-    "sls": "serverless"
+    "sls": "serverless",
+    "localstack:start": "localstack start"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.3.0",
     "@commitlint/config-conventional": "^17.3.0",
     "@serverless/typescript": "^3.38.0",
     "@types/aws-lambda": "^8.10.138",
+    "@types/http-errors": "^2.0.4",
     "@types/jest": "^29.5.0",
     "@types/node": "^18.11.18",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
@@ -61,6 +63,9 @@
     "@middy/http-cors": "^4.4.0",
     "@middy/http-error-handler": "^4.4.0",
     "@middy/http-header-normalizer": "^4.4.0",
+    "@middy/http-json-body-parser": "^4.4.0",
+    "@middy/http-security-headers": "^4.4.0",
+    "@middy/validator": "^4.4.0",
     "ajv": "^8.12.0",
     "http-errors": "^2.0.0"
   },

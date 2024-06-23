@@ -1,22 +1,29 @@
+import { ResponseBuilder } from "@packages/aws/lambda/response-builder";
 import { HttpApiHandlerFactoryProperties } from "@packages/middlewares/http-api/types";
-import { APIGatewayProxyEvent } from "aws-lambda";
+import { APIGatewayProxyEvent, Context } from "aws-lambda";
 
 import httpApiMiddleware from "../../../../../src/packages/middlewares/http-api/http-api.middleware";
 
 describe("httpApiHandlerFactory", () => {
   const sut = httpApiMiddleware;
+  let properties: HttpApiHandlerFactoryProperties<{ foo: string }>;
 
-  // TODO: change for a better mocked context
-  let context: any = {};
+  let context: Context;
 
   let event: APIGatewayProxyEvent;
 
   beforeEach(() => {
-    context = {};
+    jest.resetAllMocks();
+    context = {} as any;
     event = {
       httpMethod: "GET"
     } as APIGatewayProxyEvent;
-    jest.resetAllMocks();
+    properties = {
+      handler: jest.fn(async () => ({ foo: "bar" })),
+      presenter: jest.fn(() =>
+        new ResponseBuilder().withStatusCode(200).build()
+      )
+    };
   });
 
   it("should return a function", () => {
@@ -33,16 +40,14 @@ describe("httpApiHandlerFactory", () => {
 
   it("should call the handler with the event, context", async () => {
     // Arrange
-    const properties: HttpApiHandlerFactoryProperties<any> = {
-      handler: jest.fn(),
-      presenter: jest.fn()
-    };
-
     const cb = jest.fn();
     // Act
     const handler = sut(properties);
-    await handler(event, context, cb);
+    const handlerPromise = handler(event, context, cb);
     // Assert
+    await expect(handlerPromise).resolves.toMatchObject(
+      expect.objectContaining({ statusCode: 200 })
+    );
     expect(properties.handler).toHaveBeenCalledWith(
       event,
       context,

@@ -55,8 +55,9 @@ function wrapPresenter<RESPONSE>(
   return (response: RESPONSE): APIGatewayProxyResult => {
     try {
       const selectedPresenter = presenter ?? httpApiPresenter;
-      assertIsAPIGatewayProxyResult(selectedPresenter(response));
-      return selectedPresenter(response);
+      const presentedResponse = selectedPresenter(response);
+      assertIsAPIGatewayProxyResult(presentedResponse);
+      return presentedResponse;
     } catch (e) {
       console.error("Error found while presenting", e);
       throw e;

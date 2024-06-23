@@ -10,7 +10,7 @@ const publisher = new EventBridgePublisher();
 const handler = async (event: APIGatewayProxyEvent): Promise<Account> => {
   console.info("Event received in Handler", event);
   if (!event.body) throw new Error("Invalid body received");
-  const { firstName, surname } = JSON.parse(event.body);
+  const { firstName, surname } = event.body as any;
 
   return createCustomerAccountUseCase(
     {
